@@ -1,5 +1,6 @@
 package com.example;
 
+import org.apache.wicket.Page;
 import org.apache.wicket.csp.CSPDirective;
 import org.apache.wicket.csp.CSPDirectiveSrcValue;
 import org.apache.wicket.markup.html.WebPage;

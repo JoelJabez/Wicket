@@ -10,4 +10,10 @@
       </profile>
     </annotationProcessing>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-Xplugin:Manifold " />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Wicket" options="&quot;-Xplugin:Manifold no-bootstrap&quot;" />
+    </option>
+  </component>
 </project>
