@@ -1,6 +1,8 @@
 package com.example;
 
-import org.apache.wicket.Page;
+import com.example.pages.HelloPage;
+import com.example.pages.HomePage;
+import com.example.pages.PanelExample;
 import org.apache.wicket.csp.CSPDirective;
 import org.apache.wicket.csp.CSPDirectiveSrcValue;
 import org.apache.wicket.markup.html.WebPage;
@@ -11,7 +13,7 @@ public class WicketApplication extends WebApplication
 	@Override
 	public Class<? extends WebPage> getHomePage()
 	{
-		return HomePage.class;
+		return HelloPage.class;
 	}
 
 	/**

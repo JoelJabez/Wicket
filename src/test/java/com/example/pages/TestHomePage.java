@@ -1,5 +1,6 @@
-package com.example;
+package com.example.pages;
 
+import com.example.WicketApplication;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,7 +8,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Simple test using the WicketTester
  */
-public class TestHomePage
+class TestHomePage
 {
 	private WicketTester tester;
 
@@ -18,7 +19,7 @@ public class TestHomePage
 	}
 
 	@Test
-	public void homepageRendersSuccessfully()
+	void homepageRendersSuccessfully()
 	{
 		//start and render the test page
 		tester.startPage(HomePage.class);

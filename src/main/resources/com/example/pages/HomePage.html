@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Apache Wicket Quickstart</title>
+    <link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,bold'
+          rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="style.css"
+          type="text/css" media="screen"
+          title="Stylesheet"/>
+</head>
+    <body>
+        <div>
+            <h1>Hello example:</h1>
+            <p wicket:id="hello"></p>
+            <br/>
+        </div>
+
+        <div wicket:id="incrementPanel"></div>
+
+        <div wicket:id="clockPanel"></div>
+
+        <div>
+            <h1>Form example:</h1>
+            <form wicket:id="form">
+                <label>
+                    <input type="text" wicket:id="street" />
+                </label>
+
+                <label>
+                    <input type="text" wicket:id="city" />
+                </label>
+
+                <label>
+                    <select wicket:id="state"></select>
+                </label>
+
+                <label>
+                    <input type="text" wicket:id="zipcode" />
+                </label>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div wicket:id="address">
+            <h1>Nested components example:</h1>
+            <b wicket:id="street"></b>
+            <b wicket:id="city"></b>
+            <b wicket:id="state"></b>
+            <b wicket:id="zipcode"></b>
+        </div>
+
+        <div wicket:id="panel"></div>
+    </body>
+</html>
