@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org">
+    <body>
+        <div>
+            <h1>Form example:</h1>
+            <form wicket:id="form">
+                <label>
+                    <input type="text" wicket:id="street" />
+                </label>
+
+                <label>
+                    <input type="text" wicket:id="city" />
+                </label>
+
+                <label>
+                    <select wicket:id="state"></select>
+                </label>
+
+                <label>
+                    <input type="text" wicket:id="zipcode" />
+                </label>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div wicket:id="address">
+            <h1>Nested components example:</h1>
+            <b wicket:id="street"></b>
+            <b wicket:id="city"></b>
+            <b wicket:id="state"></b>
+            <b wicket:id="zipcode"></b>
+        </div>
+    </body>
+</html>

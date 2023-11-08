@@ -1,30 +1,29 @@
 package com.example.pages;
 
-import com.example.domain.Address;
-import org.apache.wicket.markup.html.WebMarkupContainer;
+import com.example.WicketApplication;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.DropDownChoice;
-import org.apache.wicket.markup.html.form.Form;
-import org.apache.wicket.markup.html.form.TextField;
-import org.apache.wicket.model.CompoundPropertyModel;
-import org.apache.wicket.validation.validator.StringValidator;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
+import org.apache.wicket.markup.html.link.ExternalLink;
+import org.apache.wicket.markup.repeater.RepeatingView;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import java.io.Serializable;
-import java.util.Arrays;
 
 public class HomePage extends WebPage implements Serializable {
-	private Address address = new Address();
 	private static final long serialVersionUID = 1L;
-	private static final String ZIPCODE = "zipcode";
 
 	public HomePage() {
 		hello();
 		incrementMethod();
 		clock();
-		address();
 		formMethod();
 		panel();
+		repeaters();
+		link();
+		internalLink();
+		frontPage();
+		personTable();
 	}
 
 	private void hello() {
@@ -39,46 +38,38 @@ public class HomePage extends WebPage implements Serializable {
 		add(new ClockPanel("clockPanel"));
 	}
 
-	private void address() {
-		var parent = new WebMarkupContainer("address", new CompoundPropertyModel<>(address));
-
-		add(parent);
-		parent.add(new Label("street"));
-		parent.add(new Label("city"));
-		parent.add(new Label("state"));
-		parent.add(new Label(ZIPCODE));
-	}
-
 	private void formMethod() {
-		var form = new Form<>("form", new CompoundPropertyModel<>(address));
-		var states = Arrays.asList(
-			"Johor",
-			"Kedah",
-			"Kelantan",
-			"Malacca",
-			"Negeri Sembilan",
-			"Pahang",
-			"Penang",
-			"Perak",
-			"Perlis",
-			"Sarawak",
-			"Selangor",
-			"Terengganu"
-		);
-
-		address.state = null;
-		add(form);
-		var streetTextField = new TextField<>("street");
-		streetTextField.isRequired = true;
-		streetTextField.add(StringValidator.maximumLength(20));
-
-		form.add(streetTextField);
-		form.add(new TextField<>("city"));
-		form.add(new DropDownChoice<>("state", states));
-		form.add(new TextField<>(ZIPCODE).add(StringValidator.exactLength(5)));
+		add(new BookmarkablePageLink<>("form", FormPage.class));
 	}
 
 	private void panel() {
 		add(new PanelExample("panel"));
+	}
+
+	private void repeaters() {
+		var repeater = new RepeatingView("repeater");
+		add(repeater);
+
+		for (int i = 1; i <= WicketApplication.get().selectedApples().size(); i++) {
+			repeater.add(new Label(String.valueOf(i), WicketApplication.get().selectedApples()[i].model()));
+		}
+	}
+
+	private void link() {
+		add(new ExternalLink("link", "https://wicket.apache.org/", "Wicket"));
+	}
+
+	private void internalLink() {
+		var pageParameters = new PageParameters();
+		pageParameters.add("text", "hello world");
+		add(new BookmarkablePageLink<>("internalLink", HelloPage.class, pageParameters));
+	}
+
+	private void frontPage() {
+		add(new BookmarkablePageLink<>("frontPage", Index.class));
+	}
+
+	private void personTable() {
+		add(new BookmarkablePageLink<>("personTable", PersonTablePage.class));
 	}
 }
