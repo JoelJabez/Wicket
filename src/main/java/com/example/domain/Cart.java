@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cart implements Serializable {
+    private static final long serialVersionUID = 2405172041950251807L;
     @var
-    List<Apple> apples = new ArrayList<>();
+    List<Phone> phones = new ArrayList<>();
 }
