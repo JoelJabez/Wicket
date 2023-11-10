@@ -17,8 +17,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class WicketApplication extends WebApplication
-{
+public class WicketApplication extends WebApplication {
 	private final List<Phone> apple = Arrays.asList(
 		new Phone("iPhone 15 Pro", "https://www.apple.com/my/iphone-15-pro/"),
 		new Phone("iPhone 15", "https://www.apple.com/my/iphone-15/"),
@@ -54,12 +53,12 @@ public class WicketApplication extends WebApplication
 		)
 	);
 
-	private List<Phone> nothingPhone = Arrays.asList(
+	private final List<Phone> nothingPhone = Arrays.asList(
 		new Phone("Nothing Phone(1)", "https://my.nothing.tech/products/phone-1"),
 		new Phone("Nothing Phone(2)", "https://my.nothing.tech/pages/phone-2")
 	);
 	
-	private List<Phone> nokia = Arrays.asList(
+	private final List<Phone> nokia = Arrays.asList(
 		new Phone("Nokia X30 5G", "https://www.nokia.com/phones/en_my/nokia-x-30?sku=VMA751R9FI1AL0"),
 		new Phone("Nokia C21 Plus", "https://www.nokia.com/phones/en_my/nokia-c-21-plus?sku=719901189181"),
 		new Phone("Nokia C21", "https://www.nokia.com/phones/en_my/nokia-c-21?sku=286717235"),
@@ -68,8 +67,7 @@ public class WicketApplication extends WebApplication
 	);
 
 	@Override
-	public Class<? extends WebPage> getHomePage()
-	{
+	public Class<? extends WebPage> getHomePage() {
 		return HomePage.class;
 	}
 
@@ -77,8 +75,7 @@ public class WicketApplication extends WebApplication
 	 * @see org.apache.wicket.Application#init()
 	 */
 	@Override
-	public void init()
-	{
+	public void init() {
 		super.init();
 
 		// needed for the styling used by the quickstart
@@ -107,7 +104,7 @@ public class WicketApplication extends WebApplication
 		};
 	}
 
-	public List<Phone> selectedApples(){
+	public List<Phone> selectedApples() {
 		return new ArrayList<>();
 	}
 }

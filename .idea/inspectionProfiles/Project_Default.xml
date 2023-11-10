@@ -4,8 +4,39 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="1">
+          <list size="2">
             <item index="0" class="java.lang.String" itemvalue="wicket:id" />
+            <item index="1" class="java.lang.String" itemvalue="wicket:title" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="21">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="div" />
+            <item index="7" class="java.lang.String" itemvalue="wicket:panel" />
+            <item index="8" class="java.lang.String" itemvalue="h1" />
+            <item index="9" class="java.lang.String" itemvalue="b" />
+            <item index="10" class="java.lang.String" itemvalue="link" />
+            <item index="11" class="java.lang.String" itemvalue="wicket:head" />
+            <item index="12" class="java.lang.String" itemvalue="wicket:link" />
+            <item index="13" class="java.lang.String" itemvalue="wicket:foo" />
+            <item index="14" class="java.lang.String" itemvalue="a" />
+            <item index="15" class="java.lang.String" itemvalue="p" />
+            <item index="16" class="java.lang.String" itemvalue="br" />
+            <item index="17" class="java.lang.String" itemvalue="wicket:fragment" />
+            <item index="18" class="java.lang.String" itemvalue="form" />
+            <item index="19" class="java.lang.String" itemvalue="wicket:child" />
+            <item index="20" class="java.lang.String" itemvalue="wicket:extend" />
           </list>
         </value>
       </option>

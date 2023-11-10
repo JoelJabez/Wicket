@@ -1,17 +1,22 @@
 package com.example.pages;
 
+import com.example.domain.User;
 import com.example.WicketApplication;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.repeater.RepeatingView;
+import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import java.io.Serializable;
 
 public class HomePage extends WebPage implements Serializable {
-	private static final long serialVersionUID = 1L;
+	int counter = 0;
 
 	public HomePage() {
 		hello();
@@ -24,6 +29,9 @@ public class HomePage extends WebPage implements Serializable {
 		internalLink();
 		frontPage();
 		personTable();
+		ajax();
+		ajaxIncrement();
+		userForm();
 	}
 
 	private void hello() {
@@ -71,5 +79,34 @@ public class HomePage extends WebPage implements Serializable {
 
 	private void personTable() {
 		add(new BookmarkablePageLink<>("personTable", PersonTablePage.class));
+	}
+
+	private void ajax() {
+		add(new AjaxLink<>("ajax") {
+			@Override
+			public void onClick(AjaxRequestTarget ajaxRequestTarget) {
+				ajaxRequestTarget.appendJavaScript("alert('')");
+			}
+		});
+	}
+
+	private void ajaxIncrement() {
+		var counterModel = new PropertyModel<>(this, "counter");
+		var counterLabelWithAjax = new Label("ajaxCounter", counterModel);
+		add(counterLabelWithAjax);
+
+		counterLabelWithAjax.setOutputMarkupId(true);
+		add(new AjaxLink<>("ajaxIncrement") {
+			@Override
+			public void onClick(AjaxRequestTarget ajaxRequestTarget) {
+				counter++;
+				ajaxRequestTarget.appendJavaScript("alert('$counter')");
+				ajaxRequestTarget.add(counterLabelWithAjax);
+			}
+		});
+	}
+
+	private void userForm() {
+		add(new BookmarkablePageLink<>("userForm", UserPage.class));
 	}
 }

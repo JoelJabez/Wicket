@@ -12,7 +12,6 @@ public class PersonProvider extends SortableDataProvider {
     private List<Person> persons = new ArrayList<>();
 
     public PersonProvider() {
-
         persons.add(new Person("Alice", 13));
         persons.add(new Person("George", 19));
         persons.add(new Person("Bob", 14));
