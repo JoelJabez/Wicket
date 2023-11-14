@@ -1,7 +1,5 @@
 package com.example.pages;
 
-import com.example.domain.User;
-import com.example.WicketApplication;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.markup.html.WebPage;
@@ -11,9 +9,10 @@ import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.repeater.RepeatingView;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
-import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomePage extends WebPage implements Serializable {
 	int counter = 0;
@@ -57,10 +56,15 @@ public class HomePage extends WebPage implements Serializable {
 	private void repeaters() {
 		var repeater = new RepeatingView("repeater");
 		add(repeater);
+		List<String> names = new ArrayList<>();
+		names.add("Alice");
+		names.add("Bob");
+		names.add("Charles");
+		names.add("David");
+		names.add("Echo");
+		names.add("Fred");
 
-		for (int i = 1; i <= WicketApplication.get().selectedApples().size(); i++) {
-			repeater.add(new Label(String.valueOf(i), WicketApplication.get().selectedApples()[i].model()));
-		}
+		names.forEach(name -> repeater.add(new Label(String.valueOf(name.hashCode()), name)));
 	}
 
 	private void link() {

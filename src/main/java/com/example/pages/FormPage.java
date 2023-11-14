@@ -27,18 +27,18 @@ public class FormPage extends WebPage {
 
         var form = new Form<>("form", new CompoundPropertyModel<>(address));
         var states = Arrays.asList(
-                "Johor",
-                "Kedah",
-                "Kelantan",
-                "Malacca",
-                "Negeri Sembilan",
-                "Pahang",
-                "Penang",
-                "Perak",
-                "Perlis",
-                "Sarawak",
-                "Selangor",
-                "Terengganu"
+            "Johor",
+            "Kedah",
+            "Kelantan",
+            "Malacca",
+            "Negeri Sembilan",
+            "Pahang",
+            "Penang",
+            "Perak",
+            "Perlis",
+            "Sarawak",
+            "Selangor",
+            "Terengganu"
         );
 
         address.state = null;
