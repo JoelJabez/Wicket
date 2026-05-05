@@ -42,6 +42,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- allowed values: R7, 1.0, 1.5, 2.0 or none -->
 		<wtp.version>none</wtp.version>
+		<commons-fileupload.commons-fileupload.version>1.6.0</commons-fileupload.commons-fileupload.version>
 	</properties>
 	<dependencies>
 		<!--  WICKET DEPENDENCIES -->
@@ -213,4 +214,13 @@
 			</snapshots>
 		</repository>
 	</repositories>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons-fileupload.commons-fileupload.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	</project>
