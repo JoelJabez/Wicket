@@ -42,6 +42,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- allowed values: R7, 1.0, 1.5, 2.0 or none -->
 		<wtp.version>none</wtp.version>
+		<org-apache-wicket.wicket-util.version>9.18.0</org-apache-wicket.wicket-util.version>
 	</properties>
 	<dependencies>
 		<!--  WICKET DEPENDENCIES -->
@@ -213,4 +214,13 @@
 			</snapshots>
 		</repository>
 	</repositories>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.wicket</groupId>
+				<artifactId>wicket-util</artifactId>
+				<version>${org-apache-wicket.wicket-util.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	</project>
